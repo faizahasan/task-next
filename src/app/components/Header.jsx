@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function Header() {
   return (
@@ -6,7 +7,16 @@ export default function Header() {
     <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 ">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="./" class="flex items-center">
-                <img src="favicon.ico" class="mr-3 h-6 sm:h-9" alt="Website Logo" />
+            
+            <Image
+  src="/favicon.ico" 
+  className="mr-3 h-6 sm:h-9"
+  alt="Website Logo"
+  width={24} 
+  height={24} 
+/>
+                
+
                 <span class="self-center text-xl font-semibold whitespace-nowrap ">Website</span>
             </a>
             <div class="flex items-center lg:order-2">

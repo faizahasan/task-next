@@ -3,6 +3,7 @@
 import axios from "axios";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import Image from "next/image";
 
 // A server component, so no useEffect is needed
 export default async function ProductDetail({ params }) {
@@ -20,7 +21,7 @@ export default async function ProductDetail({ params }) {
       <div className=" container my-20 mx-auto p-10">
         <div className="md:flex lg:flex bg-white border-10 border-black p-8 rounded-lg shadow-lg">
           <div>
-          <img
+          <Image
             src={product.image}
             alt={product.title}
             className=" w-full h-full transition-all hover:scale-110 object-contain"
