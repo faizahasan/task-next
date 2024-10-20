@@ -27,6 +27,12 @@ export default function ProductsPage() {
   const handleNextPage = () => setPage(prevPage => prevPage + 1);
   const handlePreviousPage = () => setPage(prevPage => Math.max(prevPage - 1, 1)); // Prevent going below page 1
 
+  // Function to limit title to 6 words
+  const limitTitle = (title) => {
+    const words = title.split(' ');
+    return words.length > 6 ? words.slice(0, 6).join(' ') + '...' : title;
+  };
+
   return (
     <>
       <Header />
@@ -52,8 +58,8 @@ export default function ProductsPage() {
             filteredProducts.map(product => (
               <a key={product.id} href={`/products/${product.id}`} className="hover:scale-110 transition-all duration-700 m-5 bg-white p-4 rounded-lg shadow-lg">
                 <div>
-                  <img src={product.image} alt={product.title} className="w-20 h-20" />
-                  <h2 className="text-lg font-bold mt-2">{product.title}</h2>
+                  <img src={product.image} alt={product.title} className="w-30 h-20 mx-auto" />
+                  <h2 className="text-lg font-bold mt-2">{limitTitle(product.title)}</h2>
                   <p className="text-sm text-gray-500">${product.price}</p>
                 </div>
               </a>

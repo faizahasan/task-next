@@ -1,4 +1,3 @@
-
 // app/products/[id]/page.js
 import axios from "axios";
 import Header from "@/app/components/Header";
@@ -21,16 +20,18 @@ export default async function ProductDetail({ params }) {
       <div className=" container my-20 mx-auto p-10">
         <div className="md:flex lg:flex bg-white border-10 border-black p-8 rounded-lg shadow-lg">
           <div>
-          <Image
-            src={product.image}
-            alt={product.title}
-            className=" w-full h-full transition-all hover:scale-110 object-contain"
-          />
+            <img
+              src={product.image}
+              alt={product.title}
+              width={50}
+              height={50}
+              className="w-full h-full transition-all hover:scale-110 object-contain"
+            />
           </div>
           <div>
-          <h2 className="text-2xl font-bold mt-4">{product.title}</h2>
-          <p className="text-gray-400 font-bold mt-2">${product.price}</p>
-          <p className="mt-4">{product.description}</p>
+            <h2 className="text-2xl font-bold mt-4">{product.title}</h2>
+            <p className="text-gray-400 font-bold mt-2">${product.price}</p>
+            <p className="mt-4">{product.description}</p>
           </div>
         </div>
       </div>
