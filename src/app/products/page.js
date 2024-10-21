@@ -56,13 +56,14 @@ export default function ProductsPage() {
         <div className="container m-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredProducts.length > 0 ? (
             filteredProducts.map(product => (
-              <a key={product.id} href={`/products/${product.id}`} className="hover:scale-110 transition-all duration-700 m-5 bg-white p-4 rounded-lg shadow-lg">
-                <div>
-                  <img src={product.image} alt={product.title} className="w-30 h-20 mx-auto" />
-                  <h2 className="text-lg font-bold mt-2">{limitTitle(product.title)}</h2>
-                  <p className="text-sm text-gray-500">${product.price}</p>
-                </div>
-              </a>
+              <a key={product.id} href={`/products/${product.id}`} className="hover:scale-105 transition-all duration-300 m-5 bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+  <div className="flex-grow">
+    <img src={product.image} alt={product.title} className="w-full h-48 object-cover rounded-lg" />
+  </div>
+  <h2 className="text-lg font-bold mt-2 text-center">{limitTitle(product.title)}</h2>
+  <p className="text-sm text-gray-500 text-center">${product.price}</p>
+</a>
+
             ))
           ) : (
             <p className="m-5">No products found.</p> // Handle no products found
